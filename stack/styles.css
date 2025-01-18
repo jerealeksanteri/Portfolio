@@ -1,0 +1,20 @@
+.stack-content {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stack-content div {
+    width: 30vw;
+    height: 20vh;
+    flex-direction: column;
+    vertical-align: top;
+    padding: 1vh;
+    margin-inline: 1vw;
+    margin-top: 1vh;
+    align-items: center;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    color: #333;
+}

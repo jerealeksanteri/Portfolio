@@ -12,9 +12,14 @@ let index = 0;
 let charIndex = 0;
 const typingSpeed = 100;
 const lineSpeed = 700;
+let typingActive = true;
 
 // Type the text
 function type() {
+
+    // If the typing is not active, return
+    if (!currentSectionIndex !== 0) return;
+
     if (index < terminalText.length) {
         if (charIndex < terminalText[index].length) {
             // Get the text content
@@ -66,6 +71,7 @@ let isScrolling = false;
 let currentSectionIndex = 0;
 
 function scrollToSection(index) {
+
     console.log(index);
     if (index >= 0 && index < sections.length) {
         sections[index].scrollIntoView({ behavior: 'smooth' });
@@ -130,3 +136,29 @@ function handleTouchEnd(event) {
 window.addEventListener('wheel', handleScroll, { passive: false });
 window.addEventListener('touchstart', handleTouchStart, { passive: false });
 window.addEventListener('touchend', handleTouchEnd, { passive: false });
+
+
+function loadObject(id, path) {
+    fetch(path)
+        .then(response => response.text())
+        .then((html) => {
+            document.getElementById(id).innerHTML = html;
+
+            // Dynamically load the styles
+            const style = document.createElement('link');
+            style.rel = 'stylesheet';
+            style.href = `${path.replace("index.html", "styles.css")}`;
+            document.head.appendChild(style);
+
+            // Dynamically load the scripts
+            const script = document.createElement('script');
+            script.src = `${path.replace("index.html", "scripts.js")}`;
+            document.body.appendChild(script);
+        })
+        .catch((error) => {
+            console.error(`Error loading path ${path}:`, error);
+        });
+};
+
+// Load the objects
+loadObject('stack', 'stack/index.html');
