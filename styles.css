@@ -25,6 +25,7 @@ section {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
     padding: 20px;
+    white-space: pre-wrap;
 }
 
 #title {
@@ -33,10 +34,12 @@ section {
 }
 
 #introduction {
+    flex-direction: column;
     background-color: #ccc;
     color: #333;
     text-align: center;
-    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
 #education {
@@ -49,21 +52,33 @@ section {
     color: #333;
 }
 
-#projects {
+#stack {
     background-color: #333;
     color: #fff;
 }
 
+#projects {
+    background-color: #ccc;
+    color: #333;
+}
+
 .quote-box {
-    max-width: 60%;
+    max-width: 50vh;
+    margin: 0 auto;
+    margin-top: 2vh;
     padding: 20px;
-    border: 3px solid #d1e7ff;
+    border: 2px solid #333;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
-    font-size: large;
-    text-align: center;
-    
+    font-size: 2vh;
+    background-color: rgba(255, 255, 255, 0.9); /* Subtle background for contrast */
+    color: #333;
+}
+
+#contact {
+    background-color: #333;
+    color: #fff;
 }
 
 .icon {
@@ -99,6 +114,9 @@ section {
     height: 150px;
     object-fit: cover;
     border: 3px solid #fff;
+}
+.profile-pic:hover {
+    border: 3px solid #0f0;
 }
 
 .social-links {
@@ -136,4 +154,56 @@ section {
     color: #fff;
     width: 20px;
     height: 20px;
+}
+
+.email {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.5vh;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: 2vh;
+}
+.nav {
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    color: #fff;
+    padding: 1vh;
+    z-index: 100;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-item a{
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    text-shadow: #333 2px 2px 2px;
+    text-decoration: dashed;
+    margin: 10px;
+    font-size: 1.5vh;
+    cursor: pointer;
+}
+
+.nav-item a:hover {
+    color: #0f0;
+}
+
+#cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #0f0;
+    animation: blink 0.6s steps(2) infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }

@@ -3,101 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jere Niemi - Personal Website</title>
+    <title>Jere Niemi</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section id="terminal">
-        <div>
-            <pre id="terminal-text"></pre>
-        </div>
-    </section>
-
-    <section id="title">
-        <div>
-            <div class="profile-card">
-                <img src="images/profilepic.jpeg" alt="Profile picture" class="profile-pic">
-
-                <div>
-                    <h1>Jere Niemi</h1>
-                    <div class="icon">✨</div>
-                </div>
-                
+    <div>
+        <div class="nav">
+            <div class="nav-item">
+                <a href="#title">.me</a>
+            </div>
+            <div class="nav-item">
+                <a href="#introduction">.intro</a>
+            </div>
+            <div class="nav-item">
+                <a href="#education">.edu</a>
+            </div>
+            <div class="nav-item">
+                <a href="#job-history">.history</a>
+            </div>
+            <div class="nav-item">
+                <a href="#stack">.io</a>
+            </div>
+            <div class="nav-item">
+                <a href="#projects">.pro</a>
+            </div>
+            <div class="nav-item">
+                <a href="#contact">.contact</a>
             </div>
 
-            <div class="social-links">
-
-                <div class="social-link">
-                    <a href="https://www.linkedin.com/in/jerealeksanteri/">
-                        <img src="images/linkedin.jpg" alt="LinkedIn" class="social-icon">
-                        
-                    </a>
-                    
-                </div>
-
-                <div class="social-link">
-                    <a href="https://github.com/jerealeksanteri">
-                        <img src="images/github.svg" alt="Github" class="social-icon github">
-                        
-                    </a>
-                    
-                </div>
-                
-            </div>
         </div>
-    </section>
-
-    <section id="introduction">
-        <div class="quote-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
-                <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
-            </svg>
-
-            <br>I'm a 23-year-old Embedded Systems and Software Engineering, Bachelor's degree student from Tampere, Finland. 
-            <br>I'm passionate about technology and programming, and I'm always looking for new skills and better workflows to acquire.
-            <br><br>Since I completed my marticulation examination, I've been working my way up from a summer job as a customer service agent to a part time Software Engineer in a stock listed company.
-            <br><br>The studies and my time in industry have given me a solid foundation in developing functional and maintainable software, and I'm eager to always learn more.
-            <br><br>I've always been intriqued by how things work, from the ground up. That has meant endless online courses and self learning of web development, little gameprojects, microcontroller programming, backend and middleware development and much more.
-            <br>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
-                <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
-            </svg>
-        </div>
-    </section>
-
-    <section id="education">
-        <div>
-            <h2>Education</h2>
-            <p>Details about your educational background go here.</p>
-        </div>
-    </section>
-
-    <section id="job-history">
-        <div>
-            <h2>Job History</h2>
-            <p>Details about your job history go here.</p>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div>
-            <h2>Projects</h2>
-            <p>Details about your projects go here.</p>
-        </div>
-    </section>
-
-    <footer>
         
-    </footer>
-
-    <section id="contact">
-        <div>
-            <h2>Contact</h2>
-            <p><a href="mailto:jere.niemi@tuni.fi">jere.niemi@tuni.fi</a></p>
-            <p>&copy; 2025 Jere Niemi. All rights reserved.</p>
+        <div class="content">
+            <section id="terminal">
+                <div>
+                    <pre id="terminal-text"></pre><span id="cursor">|</span>
+                </div>
+            </section>
+        
+            <section id="title">
+                <div>
+                    <div class="profile-card">
+                        <img src="images/profilepic.jpeg" alt="Profile picture" class="profile-pic">
+        
+                        <div>
+                            <h1>Jere Niemi</h1>
+                            <div class="icon">✨</div>
+                        </div>
+                        
+                    </div>
+        
+                    <div class="social-links">
+        
+                        <div class="social-link">
+                            <a href="https://www.linkedin.com/in/jerealeksanteri/">
+                                <img src="images/linkedin.jpg" alt="LinkedIn" class="social-icon">
+                                
+                            </a>
+                            
+                        </div>
+        
+                        <div class="social-link">
+                            <a href="https://github.com/jerealeksanteri">
+                                <img src="images/github.svg" alt="Github" class="social-icon github">
+                                
+                            </a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <div class="quote-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
+                        <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                    </svg>
+        
+                    <br>I'm a 23-year-old Embedded Systems and Software Engineering, Bachelor's degree student from Tampere, Finland. 
+                    <br>I've always been intriqued about modern technology and programming, and I'm always looking for new skills and better workflows to acquire.
+                    <br><br>Since I completed my marticulation examination, I've been working my way up from a summer job as a customer service agent to a part time Software Engineer in a stock listed company.
+                    <br><br>The studies and my time in industry have given me a solid foundation in developing functional and maintainable software, and I'm eager to always learn more.
+                    <br><br>I've always been intriqued by how things work, from the ground up. That has meant endless online courses and self learning of web development, little gameprojects, microcontroller programming, backend and middleware development and much more.
+                    <br>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
+                        <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                    </svg>
+                </div>
+            </section>
+        
+            <section id="education">
+                <div>
+                    <h2>Education</h2>
+                    <p>Details about your educational background go here.</p>
+                </div>
+            </section>
+        
+            <section id="job-history">
+                <div>
+                    <h2>Job History</h2>
+                    <p>Details about your job history go here.</p>
+                </div>
+            </section>
+        
+            <section id="stack">
+                <div>
+                    <h2>Stack</h2>
+                    <p>Details about your skills go here.</p>
+                </div>
+            </section>
+        
+            <section id="projects">
+                <div>
+                    <h2>Projects</h2>
+                    <p>Details about your projects go here.</p>
+                </div>
+            </section>
+        
+            <footer>
+                
+            </footer>
+        
+            <section id="contact">
+                <div>
+                    <h2>Contact</h2>
+                    <a class="email" href="mailto:jere.niemi@tuni.fi" style="text-decoration: none; color: #fff">jere.niemi@tuni.fi</a>
+                    <p>&copy; 2025 Jere Niemi. All rights reserved.</p>
+                </div>
+            </section>
+        
         </div>
-    </section>
-
+    </div>
+    
     <script src="scripts.js"></script>
 </body>
 </html>
