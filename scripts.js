@@ -13,6 +13,7 @@ let charIndex = 0;
 const typingSpeed = 100;
 const lineSpeed = 700;
 
+// Type the text
 function type() {
     if (index < terminalText.length) {
         if (charIndex < terminalText[index].length) {
@@ -43,23 +44,49 @@ function updateCursorPosition() {
     terminalDisplay.appendChild(cursor);
 }
 
+// Start the typing effect when the window loads
 window.onload = () => {
     setInterval(updateCursorPosition, 50); // Regularly update the cursor position
     type();
+
+    updateNavHighlight();
+
+    navLinks.forEach((link, index) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            scrollToSection(index+1);
+        });
+    });
 };
 
 // Scroll behavior to ensure one section scroll per action
 const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-item a');
 let isScrolling = false;
 let currentSectionIndex = 0;
 
 function scrollToSection(index) {
+    console.log(index);
     if (index >= 0 && index < sections.length) {
         sections[index].scrollIntoView({ behavior: 'smooth' });
         currentSectionIndex = index;
+        updateNavHighlight();
     }
 }
 
+// Update the nav link highlight
+function updateNavHighlight() {
+    navLinks.forEach((link, index) => {
+        if (index+1 === currentSectionIndex) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+
+// For desktop, handle scroll events
 function handleScroll(event) {
     if (isScrolling) return;
     isScrolling = true;
@@ -75,7 +102,7 @@ function handleScroll(event) {
 }
 
 
-// For mobile
+// For mobile, handle touch events
 let touchStartY = 0;
 let touchEndY = 0;
 
@@ -99,7 +126,7 @@ function handleTouchEnd(event) {
     }
 }
 
-
+// Add event listeners
 window.addEventListener('wheel', handleScroll, { passive: false });
 window.addEventListener('touchstart', handleTouchStart, { passive: false });
 window.addEventListener('touchend', handleTouchEnd, { passive: false });

@@ -71,7 +71,7 @@ section {
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
-    font-size: 2vh;
+    font-size: 1.5vh;
     background-color: rgba(255, 255, 255, 0.9); /* Subtle background for contrast */
     color: #333;
 }
@@ -186,10 +186,16 @@ section {
     margin: 10px;
     font-size: 1.5vh;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .nav-item a:hover {
     color: #0f0;
+}
+
+.nav-item a.active {
+    color: #0f0;
+    font-weight: bold;
 }
 
 #cursor {
@@ -205,5 +211,27 @@ section {
     }
     50% {
         opacity: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        position: fixed;
+        margin-top: 2vh;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        flex-direction: row; /* Change direction to horizontal */
+        justify-content: space-evenly; /* Space items evenly */
+        align-items: center;
+        padding: 10px;
+        background-color: #333; /* Optional: Add background color for clarity */
+        z-index: 1000;
+    }
+
+    .nav-item a {
+        font-size: 3vw;
+        text-shadow: none;
     }
 }
