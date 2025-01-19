@@ -18,7 +18,7 @@ let typingActive = true;
 function type() {
 
     // If the typing is not active, return
-    if (!currentSectionIndex !== 0) return;
+    if (currentSectionIndex !== 0) return;
 
     if (index < terminalText.length) {
         if (charIndex < terminalText[index].length) {

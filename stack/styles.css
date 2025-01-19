@@ -1,20 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .stack-content {
     margin-bottom: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 
-.stack-content div {
-    width: 30vw;
+.stack-column {
+    width: 40vw;
     height: 20vh;
-    flex-direction: column;
     vertical-align: top;
+    justify-items: start;
+    text-align: center;
     padding: 1vh;
     margin-inline: 1vw;
     margin-top: 1vh;
-    align-items: center;
     background-color: #f1f1f1;
     border: 1px solid #d3d3d3;
     border-radius: 10px;
-    color: #333;
+    color: #333;    
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+.stack-column::before,
+.stack-column::after {
+    position: absolute;
+    top: 0;
+    width: 5vw;
+    height: 100%;
+    content: '';
+    z-index: 2;
+    pointer-events: none;
+}
+
+.stack-column::before {
+    left:0;
+    background: linear-gradient(to right, rgba(255,255,255,1), transparent);
+}
+
+.stack-column::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,1), transparent);
+}
+
+
+.stack-column h2 {
+    position: relative;
+    z-index: 3;
+}
+
+.stack-column:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos-slide img{
+    width: 5vh;
+    height: 5vh;
+    background-color: transparent;
+    margin: 0 1vw;
+    resize: horizontal;
+}
+
+.logos-slide img:hover {
+    transform: scale(2);
+    transition: transform 0.5s;
+}
+
+.logos-slide {
+    display: inline-block;
+    margin-top: 3vh;
+    background-color: transparent;
+    animation: 10s slide infinite linear;
 }
