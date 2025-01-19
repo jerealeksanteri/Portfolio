@@ -7,3 +7,51 @@
 .projects h1 {
     color: #333;
 }
+
+.container {
+    margin-top: 1vh;
+    width: 75vw;
+    height: 80vh;
+    border: 0.5vh, solid, #333;
+    border-radius: 1vw;
+}
+
+.full-stack {
+    height: calc(100% / 3);
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.backend {
+    height: calc(100% / 3);
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.iot {
+    height: calc(100% / 3);
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.container h2 {
+    padding: 2vw;
+    width: 100%;
+    border-bottom: 0.5vh solid #333;
+    /*border-top: 0.5vh solid #333;*/
+    border-radius: 1vw;
+}
+
+.card {
+    height: 65%;
+    width: 90%;
+    margin-top: 1vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+    padding: 1vh;
+}
