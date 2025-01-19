@@ -162,3 +162,4 @@ function loadObject(id, path) {
 
 // Load the objects
 loadObject('stack', 'stack/index.html');
+loadObject('projects', 'projects/index.html');
