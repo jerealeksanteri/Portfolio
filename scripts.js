@@ -270,6 +270,7 @@ function loadObject(id, path) {
 
 
 // Load the objects
+loadObject('title', 'title/index.html');
 loadObject('introduction', 'introduction/index.html');
 loadObject('education', 'education/index.html');
 loadObject('job-history', 'history/index.html');
