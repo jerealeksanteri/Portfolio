@@ -51,6 +51,7 @@ function updateCursorPosition() {
 
 // Start the typing effect when the window loads
 window.onload = () => {
+
     setInterval(updateCursorPosition, 50); // Regularly update the cursor position
     type();
 
@@ -62,7 +63,10 @@ window.onload = () => {
             scrollToSection(index+1);
         });
     });
+    
+
 };
+
 
 // Scroll behavior to ensure one section scroll per action
 const sections = document.querySelectorAll('section');
@@ -148,11 +152,13 @@ function loadObject(id, path) {
             const style = document.createElement('link');
             style.rel = 'stylesheet';
             style.href = `${path.replace("index.html", "styles.css")}`;
+            style.onload = () => console.log(`Styles loaded for ${path}`);
             document.head.appendChild(style);
 
             // Dynamically load the scripts
             const script = document.createElement('script');
             script.src = `${path.replace("index.html", "scripts.js")}`;
+            script.onload = () => console.log(`Script loaded for ${path}`);
             document.body.appendChild(script);
         })
         .catch((error) => {
@@ -160,6 +166,10 @@ function loadObject(id, path) {
         });
 };
 
+
+
 // Load the objects
 loadObject('stack', 'stack/index.html');
 loadObject('projects', 'projects/index.html');
+
+    
