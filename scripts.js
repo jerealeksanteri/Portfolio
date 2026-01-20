@@ -101,7 +101,7 @@ function handleScroll(event) {
     // Check if the event target is inside a scrollable container
     let target = event.target;
     while (target && target !== document.body) {
-        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
+        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
             // Inside a scrollable section, don't handle section navigation
             return;
         }
@@ -130,7 +130,7 @@ function handleTouchStart(event) {
     // Check if touch is inside a scrollable container
     let target = event.target;
     while (target && target !== document.body) {
-        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
+        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
             // Inside a scrollable section, don't handle section navigation
             return;
         }
@@ -143,7 +143,7 @@ function handleTouchEnd(event) {
     // Check if touch is inside a scrollable container
     let target = event.target;
     while (target && target !== document.body) {
-        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
+        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
             // Inside a scrollable section, don't handle section navigation
             return;
         }
@@ -199,6 +199,7 @@ function loadObject(id, path) {
 
 // Load the objects
 loadObject('introduction', 'introduction/index.html');
+loadObject('education', 'education/index.html');
 loadObject('job-history', 'history/index.html');
 loadObject('stack', 'stack/index.html');
 loadObject('projects', 'projects/index.html');
