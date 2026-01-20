@@ -98,6 +98,16 @@ function updateNavHighlight() {
 
 // For desktop, handle scroll events
 function handleScroll(event) {
+    // Check if the event target is inside a scrollable container
+    let target = event.target;
+    while (target && target !== document.body) {
+        if (target.classList && (target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
+            // Inside a scrollable section, don't handle section navigation
+            return;
+        }
+        target = target.parentElement;
+    }
+
     if (isScrolling) return;
     isScrolling = true;
 
@@ -117,10 +127,29 @@ let touchStartY = 0;
 let touchEndY = 0;
 
 function handleTouchStart(event) {
+    // Check if touch is inside a scrollable container
+    let target = event.target;
+    while (target && target !== document.body) {
+        if (target.classList && (target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
+            // Inside a scrollable section, don't handle section navigation
+            return;
+        }
+        target = target.parentElement;
+    }
     touchStartY = event.touches[0].clientY;
 }
 
 function handleTouchEnd(event) {
+    // Check if touch is inside a scrollable container
+    let target = event.target;
+    while (target && target !== document.body) {
+        if (target.classList && (target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
+            // Inside a scrollable section, don't handle section navigation
+            return;
+        }
+        target = target.parentElement;
+    }
+
     touchEndY = event.changedTouches[0].clientY;
     const direction = touchStartY - touchEndY > 0 ? 1 : -1;
 
@@ -132,7 +161,7 @@ function handleTouchEnd(event) {
 
         setTimeout(() => {
             isScrolling = false;
-        }, 1200); 
+        }, 1200);
     }
 }
 
@@ -169,6 +198,7 @@ function loadObject(id, path) {
 
 
 // Load the objects
+loadObject('job-history', 'history/index.html');
 loadObject('stack', 'stack/index.html');
 loadObject('projects', 'projects/index.html');
 

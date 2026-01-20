@@ -1,4 +1,4 @@
 # Jere Niemi Portfolio
-This Portfolio is Hosted on AWS, using S3 Bucket, CloudFront Distribution, Route 54 Hosted Zone and Certificate Manager.
+This Portfolio is Hosted on Github Pages.
 
-https://www.jereniemi.com
+[Link to Portfolio](https://jerealeksanteri.github.io/Portfolio/)
