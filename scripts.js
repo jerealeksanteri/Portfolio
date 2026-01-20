@@ -58,8 +58,7 @@ window.onload = () => {
     updateNavHighlight();
 
     navLinks.forEach((link, index) => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
+        link.addEventListener('click', () => {
             scrollToSection(index+1);
         });
     });
