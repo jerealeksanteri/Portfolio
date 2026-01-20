@@ -25,7 +25,15 @@ Portfolio/
 ├── index.html              # Main HTML structure
 ├── styles.css              # Global styles and section backgrounds
 ├── scripts.js              # Navigation logic and dynamic module loading
+├── title/                  # Modular title section (profile card)
+│   ├── index.html
+│   ├── styles.css
+│   └── scripts.js
 ├── introduction/           # Modular introduction section
+│   ├── index.html
+│   ├── styles.css
+│   └── scripts.js
+├── education/              # Modular education section
 │   ├── index.html
 │   ├── styles.css
 │   └── scripts.js
@@ -61,11 +69,13 @@ The portfolio uses a terminal/developer aesthetic with:
 
 ## Navigation
 
-The site features a custom scroll-based navigation system:
+The site features a custom JavaScript-driven navigation system:
 - **Desktop** - Mouse wheel scrolling or side navigation links
 - **Mobile** - Touch swipe gestures or top navigation bar
-- **Smooth Transitions** - Sections snap into view with smooth scrolling
+- **Smooth Transitions** - JavaScript-controlled smooth scrolling with `scrollIntoView()`
 - **Active Indicators** - Navigation highlights current section
+- **Edge Detection** - Smart scrolling within content areas vs. section navigation
+- **Bounds Protection** - Prevents navigation past first/last sections
 
 ## Modular Architecture
 
