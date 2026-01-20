@@ -89,3 +89,22 @@
     background-color: transparent;
     animation: 10s slide infinite linear;
 }
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .stack-column {
+        width: 80vw;
+        height: 25vh;
+    }
+
+    .logos-slide img {
+        width: 8vh;
+        height: 8vh;
+        margin: 0 2vw;
+    }
+
+    .stack-column::before,
+    .stack-column::after {
+        width: 10vw;
+    }
+}
