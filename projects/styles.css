@@ -8,6 +8,13 @@
     color: #333;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    text-decoration: underline;
+
+}
+
 .container {
     margin-top: 1vh;
     width: 75vw;
@@ -46,10 +53,13 @@
 }
 
 .card {
-    height: 65%;
+    height: calc((100% / 2) - 4vh);
     width: 90%;
     margin-top: 1vh;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    padding: 1vh;
+    border-radius: 1vw;
+    background-color: #7a7a7a;
 }
 
 .card h3 {
