@@ -97,15 +97,50 @@ function updateNavHighlight() {
 
 
 // For desktop, handle scroll events
+let edgeScrollCount = 0;
+const EDGE_SCROLL_THRESHOLD = 2; // Number of scroll attempts needed at edge to navigate
+
 function handleScroll(event) {
     // Check if the event target is inside a scrollable container
     let target = event.target;
+    let scrollableContainer = null;
+
     while (target && target !== document.body) {
         if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
-            // Inside a scrollable section, don't handle section navigation
-            return;
+            scrollableContainer = target;
+            break;
         }
         target = target.parentElement;
+    }
+
+    // If inside a scrollable container, check if we should allow section navigation
+    if (scrollableContainer) {
+        const direction = event.deltaY > 0 ? 1 : -1;
+        const isScrollingDown = direction > 0;
+        const isScrollingUp = direction < 0;
+
+        const hasOverflow = scrollableContainer.scrollHeight > scrollableContainer.clientHeight;
+        const isAtTop = scrollableContainer.scrollTop <= 0;
+        const isAtBottom = scrollableContainer.scrollTop + scrollableContainer.clientHeight >= scrollableContainer.scrollHeight - 1;
+
+        // If not at an edge, reset counter and let scroll naturally
+        if (hasOverflow && ((isScrollingDown && !isAtBottom) || (isScrollingUp && !isAtTop))) {
+            edgeScrollCount = 0;
+            return;
+        }
+
+        // At edge or no overflow - increment counter
+        if (hasOverflow) {
+            edgeScrollCount++;
+
+            // Need multiple scroll attempts to navigate
+            if (edgeScrollCount < EDGE_SCROLL_THRESHOLD) {
+                return;
+            }
+        }
+
+        // Reset counter after navigation
+        edgeScrollCount = 0;
     }
 
     if (isScrolling) return;
@@ -125,33 +160,65 @@ function handleScroll(event) {
 // For mobile, handle touch events
 let touchStartY = 0;
 let touchEndY = 0;
+let scrollableContainerForTouch = null;
+let edgeSwipeCount = 0;
+const EDGE_SWIPE_THRESHOLD = 2; // Number of swipe attempts needed at edge to navigate
 
 function handleTouchStart(event) {
     // Check if touch is inside a scrollable container
     let target = event.target;
+    scrollableContainerForTouch = null;
+
     while (target && target !== document.body) {
         if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
-            // Inside a scrollable section, don't handle section navigation
-            return;
+            scrollableContainerForTouch = target;
+            break;
         }
         target = target.parentElement;
     }
+
     touchStartY = event.touches[0].clientY;
 }
 
 function handleTouchEnd(event) {
-    // Check if touch is inside a scrollable container
-    let target = event.target;
-    while (target && target !== document.body) {
-        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
-            // Inside a scrollable section, don't handle section navigation
-            return;
-        }
-        target = target.parentElement;
+    touchEndY = event.changedTouches[0].clientY;
+    const swipeDistance = Math.abs(touchStartY - touchEndY);
+
+    // Ignore small movements (likely taps, not swipes)
+    if (swipeDistance < 30) {
+        return;
     }
 
-    touchEndY = event.changedTouches[0].clientY;
     const direction = touchStartY - touchEndY > 0 ? 1 : -1;
+
+    // If inside a scrollable container, check if we should allow section navigation
+    if (scrollableContainerForTouch) {
+        const isScrollingDown = direction > 0;
+        const isScrollingUp = direction < 0;
+
+        const hasOverflow = scrollableContainerForTouch.scrollHeight > scrollableContainerForTouch.clientHeight;
+        const isAtTop = scrollableContainerForTouch.scrollTop <= 0;
+        const isAtBottom = scrollableContainerForTouch.scrollTop + scrollableContainerForTouch.clientHeight >= scrollableContainerForTouch.scrollHeight - 1;
+
+        // If not at an edge, reset counter and let scroll naturally
+        if (hasOverflow && ((isScrollingDown && !isAtBottom) || (isScrollingUp && !isAtTop))) {
+            edgeSwipeCount = 0;
+            return;
+        }
+
+        // At edge or no overflow - increment counter
+        if (hasOverflow) {
+            edgeSwipeCount++;
+
+            // Need multiple swipe attempts to navigate
+            if (edgeSwipeCount < EDGE_SWIPE_THRESHOLD) {
+                return;
+            }
+        }
+
+        // Reset counter after navigation
+        edgeSwipeCount = 0;
+    }
 
     if (!isScrolling) {
         isScrolling = true;
