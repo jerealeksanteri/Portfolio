@@ -75,14 +75,20 @@ Logos enlarge 2x on hover for detailed viewing.
 Pseudo-elements create edge fading:
 - `::before` - Left edge fade (left: 0)
 - `::after` - Right edge fade (right: 0)
-- Width: 5vw each
+- Width: 5vw each (10vw on mobile)
 - Gradient: White to transparent
 
 ### Logo Sizing
+**Desktop:**
 - Width/Height: 5vh each
 - Margin: 0 1vw between logos
 - Transparent background
 - Hover scale: 2x
+
+**Mobile (≤768px):**
+- Width/Height: 8vh each (60% larger)
+- Margin: 0 2vw between logos
+- Enhanced visibility for touch devices
 
 ## Image Requirements
 
@@ -149,6 +155,17 @@ Appears as `#stack` section in navigation, positioned between job history and pr
 ```
 
 Three columns stacked vertically with even spacing.
+
+## Mobile Responsiveness
+
+### Mobile Optimizations (≤768px)
+- **Wider containers**: 80vw (vs 40vw desktop) - uses more screen width
+- **Taller containers**: 25vh (vs 20vh desktop) - more vertical space
+- **Larger logos**: 8vh (vs 5vh desktop) - 60% size increase
+- **Better spacing**: 2vw margins (vs 1vw) - improved touch targets
+- **Wider fades**: 10vw gradient edges (vs 5vw) - smoother transitions
+
+The mobile layout maximizes screen real estate while making logos significantly larger and easier to view on smaller devices.
 
 ## Background
 
