@@ -143,16 +143,19 @@ function handleScroll(event) {
     }
 
     if (isScrolling) return;
-    isScrolling = true;
 
     const direction = event.deltaY > 0 ? 1 : -1;
     const nextSectionIndex = currentSectionIndex + direction;
 
-    scrollToSection(nextSectionIndex);
+    // Only set isScrolling if we're navigating to a valid section
+    if (nextSectionIndex >= 0 && nextSectionIndex < sections.length) {
+        isScrolling = true;
+        scrollToSection(nextSectionIndex);
 
-    setTimeout(() => {
-        isScrolling = false;
-    }, 1200);
+        setTimeout(() => {
+            isScrolling = false;
+        }, 1200);
+    }
 }
 
 
@@ -220,14 +223,17 @@ function handleTouchEnd(event) {
     }
 
     if (!isScrolling) {
-        isScrolling = true;
         const nextSectionIndex = currentSectionIndex + direction;
 
-        scrollToSection(nextSectionIndex);
+        // Only set isScrolling if we're navigating to a valid section
+        if (nextSectionIndex >= 0 && nextSectionIndex < sections.length) {
+            isScrolling = true;
+            scrollToSection(nextSectionIndex);
 
-        setTimeout(() => {
-            isScrolling = false;
-        }, 1200);
+            setTimeout(() => {
+                isScrolling = false;
+            }, 1200);
+        }
     }
 }
 
