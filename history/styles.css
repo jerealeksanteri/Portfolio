@@ -133,12 +133,23 @@
 .job-badge {
     display: inline-block;
     padding: 4px 12px;
-    background: #0f0;
+    background: rgb(0, 255, 0);
     color: #000;
     font-weight: bold;
     border-radius: 20px;
     font-size: 0.8rem;
     box-shadow: 0 0 10px #0f0;
+}
+
+.corona-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgb(204, 136, 0);
+    color: #000;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    box-shadow: 0 0 10px rgb(220, 147, 0);
 }
 
 .job-badge.glow {
