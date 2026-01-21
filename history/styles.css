@@ -261,11 +261,13 @@
 @media screen and (max-width: 768px) {
     .job-history-wrapper {
         max-height: 85vh;
+        align-items: center;
     }
 
     .job-history-wrapper h2 {
         font-size: 1.5rem;
         margin-bottom: 20px;
+        width: 90%;
     }
 
     .job-history {
