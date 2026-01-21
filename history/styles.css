@@ -1,11 +1,36 @@
-.job-history {
+.job-history-wrapper {
     width: 100%;
     max-width: 700px;
-    max-height: 80vh;
-    padding: 15px;
     font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+.job-history-wrapper h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    color: #0f0;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #0f0;
+    border-radius: 10px;
+    text-shadow: 0 0 15px #0f0, 0 0 30px #0f0, 0 0 45px #0f0;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), inset 0 0 15px rgba(0, 255, 0, 0.1);
+    animation: pulse 2s ease-in-out infinite;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+}
+
+.job-history {
+    width: 100%;
+    padding: 0 15px 15px 15px;
     overflow-y: auto;
     overflow-x: hidden;
+    flex: 1;
 }
 
 /* Custom scrollbar */
@@ -24,23 +49,6 @@
 
 .job-history::-webkit-scrollbar-thumb:hover {
     background: #0ff;
-}
-
-.job-history h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    padding: 15px 20px;
-    color: #0f0;
-    background: rgba(0, 0, 0, 0.85);
-    border: 2px solid #0f0;
-    border-radius: 10px;
-    text-shadow: 0 0 15px #0f0, 0 0 30px #0f0, 0 0 45px #0f0;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), inset 0 0 15px rgba(0, 255, 0, 0.1);
-    animation: pulse 2s ease-in-out infinite;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    letter-spacing: 2px;
 }
 
 @keyframes pulse {
@@ -251,14 +259,17 @@
 
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
-    .job-history {
-        padding: 10px;
+    .job-history-wrapper {
         max-height: 85vh;
     }
 
-    .job-history h2 {
+    .job-history-wrapper h2 {
         font-size: 1.5rem;
         margin-bottom: 20px;
+    }
+
+    .job-history {
+        padding: 0 10px 10px 10px;
     }
 
     .timeline::before {

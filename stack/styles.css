@@ -198,7 +198,7 @@
 @media screen and (max-width: 768px) {
     .stack-column {
         width: 85vw;
-        height: 28vh;
+        height: 20vh;
     }
 
     .stack-column h2 {
