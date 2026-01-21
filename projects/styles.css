@@ -26,12 +26,13 @@
     background: #555;
 }
 
-.projects h1 {
+.projects h2 {
     text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 25px;
     color: #333;
-    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     letter-spacing: 2px;
 }
 
@@ -195,9 +196,9 @@
         max-height: 80vh;
     }
 
-    .projects h1 {
+    .projects h2 {
         font-size: 1.5rem;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     .projects-grid {
