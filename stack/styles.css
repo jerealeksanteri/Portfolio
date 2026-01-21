@@ -12,29 +12,39 @@
 }
 
 .stack-column {
-    width: 40vw;
-    height: 20vh;
+    width: 45vw;
+    height: 22vh;
     vertical-align: top;
     justify-items: start;
     text-align: center;
-    padding: 1vh;
+    padding: 1.5vh;
     margin-inline: 1vw;
     margin-top: 1vh;
-    background-color: #f1f1f1;
-    border: 1px solid #d3d3d3;
-    border-radius: 10px;
-    color: #333;    
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 255, 0, 0.3);
+    border-radius: 15px;
+    color: #0f0;
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 255, 0, 0.1),
+                inset 0 0 20px rgba(0, 255, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stack-column:hover {
+    border-color: rgba(0, 255, 0, 0.6);
+    box-shadow: 0 12px 48px rgba(0, 255, 0, 0.2),
+                inset 0 0 30px rgba(0, 255, 0, 0.1);
+    transform: translateY(-3px);
 }
 
 .stack-column::before,
 .stack-column::after {
     position: absolute;
     top: 0;
-    width: 5vw;
+    width: 8vw;
     height: 100%;
     content: '';
     z-index: 2;
@@ -42,26 +52,30 @@
 }
 
 .stack-column::before {
-    left:0;
-    background: linear-gradient(to right, rgba(255,255,255,1), transparent);
+    left: 0;
+    background: linear-gradient(to right, rgba(51, 51, 51, 1), transparent);
 }
 
 .stack-column::after {
     right: 0;
-    background: linear-gradient(to left, rgba(255,255,255,1), transparent);
+    background: linear-gradient(to left, rgba(51, 51, 51, 1), transparent);
 }
-
 
 .stack-column h2 {
     position: relative;
     z-index: 3;
+    font-family: 'Courier New', Courier, monospace;
+    color: #0f0;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    font-size: 2.2vh;
+    letter-spacing: 2px;
 }
 
 .stack-column:hover .logos-slide {
     animation-play-state: paused;
 }
 
-@keyframes slide {
+@keyframes slide-left {
     from {
         transform: translateX(0);
     }
@@ -70,41 +84,139 @@
     }
 }
 
-.logos-slide img{
-    width: 5vh;
-    height: 5vh;
-    background-color: transparent;
-    margin: 0 1vw;
-    resize: horizontal;
+@keyframes slide-right {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
-.logos-slide img:hover {
-    transform: scale(2);
-    transition: transform 0.5s;
+.logo-wrapper {
+    display: inline-block;
+    position: relative;
+    margin: 0 1vw;
+    cursor: pointer;
+}
+
+.logos-slide img {
+    width: 6vh;
+    height: 6vh;
+    background-color: transparent;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.logo-wrapper:hover img {
+    transform: scale(1.8) rotate(5deg);
+    filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.8));
+}
+
+.logo-wrapper .tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.95);
+    color: #0f0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #0f0;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.4vh;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.logo-wrapper:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.tooltip .proficiency-level {
+    display: block;
+    margin-top: 4px;
+    color: #fff;
+    font-size: 1.2vh;
+}
+
+.tooltip .level-dots {
+    display: inline-flex;
+    gap: 3px;
+    margin-left: 5px;
+}
+
+.tooltip .level-dots .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #333;
+    border: 1px solid #0f0;
+}
+
+.tooltip .level-dots .dot.filled {
+    background: #0f0;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
 }
 
 .logos-slide {
     display: inline-block;
     margin-top: 3vh;
     background-color: transparent;
-    animation: 10s slide infinite linear;
+}
+
+/* Different speeds and directions for each carousel */
+#langs-slide {
+    animation: 15s slide-left infinite linear;
+}
+
+#frameworks-slide {
+    animation: 18s slide-right infinite linear;
+}
+
+#tools-slide {
+    animation: 20s slide-left infinite linear;
 }
 
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
     .stack-column {
-        width: 80vw;
-        height: 25vh;
+        width: 85vw;
+        height: 28vh;
+    }
+
+    .stack-column h2 {
+        font-size: 2.8vh;
+    }
+
+    .logo-wrapper {
+        margin: 0 2vw;
     }
 
     .logos-slide img {
         width: 8vh;
         height: 8vh;
-        margin: 0 2vw;
     }
 
     .stack-column::before,
     .stack-column::after {
-        width: 10vw;
+        width: 12vw;
+    }
+
+    .tooltip {
+        font-size: 1.8vh;
+    }
+
+    .tooltip .proficiency-level {
+        font-size: 1.6vh;
+    }
+
+    .logo-wrapper:hover img {
+        transform: scale(1.5) rotate(5deg);
     }
 }
