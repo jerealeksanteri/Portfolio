@@ -7,10 +7,12 @@
 
 .education-section h2 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    margin-bottom: 25px;
     color: #fff;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .education-list {

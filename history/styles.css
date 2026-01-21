@@ -26,10 +26,10 @@
     background: #0ff;
 }
 
-.job-history h1 {
+.job-history h2 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 25px;
     padding: 15px 20px;
     color: #0f0;
     background: rgba(0, 0, 0, 0.85);
@@ -38,6 +38,7 @@
     text-shadow: 0 0 15px #0f0, 0 0 30px #0f0, 0 0 45px #0f0;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), inset 0 0 15px rgba(0, 255, 0, 0.1);
     animation: pulse 2s ease-in-out infinite;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     letter-spacing: 2px;
 }
@@ -255,9 +256,9 @@
         max-height: 85vh;
     }
 
-    .job-history h1 {
+    .job-history h2 {
         font-size: 1.5rem;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     .timeline::before {

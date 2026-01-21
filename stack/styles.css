@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+.stack > h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
 .stack-content {
     margin-bottom: 20px;
     display: flex;
@@ -67,7 +77,8 @@
     font-family: 'Courier New', Courier, monospace;
     color: #0f0;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    font-size: 2.2vh;
+    font-size: 1.4rem;
+    font-weight: bold;
     letter-spacing: 2px;
 }
 
@@ -191,7 +202,7 @@
     }
 
     .stack-column h2 {
-        font-size: 2.8vh;
+        font-size: 1.2rem;
     }
 
     .logo-wrapper {
