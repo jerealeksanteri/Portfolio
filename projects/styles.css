@@ -1,11 +1,29 @@
-.projects {
+.projects-wrapper {
     width: 100%;
     max-width: 800px;
-    max-height: 80vh;
-    padding: 15px;
     font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+.projects-wrapper h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+}
+
+.projects {
+    width: 100%;
+    padding: 0 15px 15px 15px;
     overflow-y: auto;
     overflow-x: hidden;
+    flex: 1;
 }
 
 /* Custom scrollbar */
@@ -24,16 +42,6 @@
 
 .projects::-webkit-scrollbar-thumb:hover {
     background: #555;
-}
-
-.projects h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    color: #333;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    letter-spacing: 2px;
 }
 
 .projects-grid {
@@ -191,14 +199,17 @@
 
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
-    .projects {
-        padding: 15px;
+    .projects-wrapper {
         max-height: 80vh;
     }
 
-    .projects h2 {
+    .projects-wrapper h2 {
         font-size: 1.5rem;
         margin-bottom: 20px;
+    }
+
+    .projects {
+        padding: 0 15px 15px 15px;
     }
 
     .projects-grid {

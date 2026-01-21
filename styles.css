@@ -166,16 +166,20 @@ section {
         left: 0;
         width: 100%;
         height: auto;
-        flex-direction: row; /* Change direction to horizontal */
-        justify-content: space-evenly; /* Space items evenly */
+        flex-direction: row;
+        justify-content: space-evenly;
         align-items: center;
         padding: 10px;
-        background-color: #333; /* Optional: Add background color for clarity */
+        background-color: #333;
         z-index: 1000;
     }
 
     .nav-item a {
         font-size: 3vw;
         text-shadow: none;
+    }
+
+    section {
+        padding-top: 60px;
     }
 }
