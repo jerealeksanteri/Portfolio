@@ -1,8 +1,7 @@
 const terminalText = [
-    "> Hello stranger", 
-    "> Yes YOU!", 
+    "> Hello stranger",
     "> My name is Jere Niemi", 
-    "> Welcome to my profile", 
+    "> Welcome to my Portfolio", 
     "> . . . . . . . :)"
 ];
 const terminalDisplay = document.getElementById("terminal-text");
