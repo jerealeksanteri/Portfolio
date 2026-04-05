@@ -62,6 +62,11 @@ section {
     color: #333;
 }
 
+#experience {
+    background-color: #333;
+    color: #fff;
+}
+
 .quote-box {
     max-width: 55vh;
     margin: 0 auto;
