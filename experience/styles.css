@@ -1,0 +1,137 @@
+.experience-wrapper {
+    width: 100%;
+    max-width: 800px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+.experience-wrapper h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+}
+
+.experience-content {
+    width: 100%;
+    padding: 0 15px 15px 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Custom scrollbar */
+.experience-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.experience-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.experience-content::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 4px;
+}
+
+.experience-content::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.experience-card {
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.experience-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.experience-card.fullstack {
+    border-left: 4px solid #0f0;
+}
+
+.experience-card.embedded {
+    border-left: 4px solid #f90;
+}
+
+.experience-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.experience-badge {
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.experience-card.fullstack .experience-badge {
+    background: rgba(0, 255, 0, 0.15);
+    color: #0f0;
+    border: 1px solid #0f0;
+}
+
+.experience-card.embedded .experience-badge {
+    background: rgba(255, 153, 0, 0.15);
+    color: #f90;
+    border: 1px solid #f90;
+}
+
+.experience-card h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.experience-list li {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.55;
+    padding-left: 16px;
+    position: relative;
+}
+
+.experience-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #666;
+    font-weight: bold;
+}
+
+.experience-card.fullstack .experience-list li::before {
+    color: #0a0;
+}
+
+.experience-card.embedded .experience-list li::before {
+    color: #c70;
+}

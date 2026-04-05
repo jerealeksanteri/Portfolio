@@ -104,7 +104,7 @@ function handleScroll(event) {
     let scrollableContainer = null;
 
     while (target && target !== document.body) {
-        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
+        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects') || target.classList.contains('experience-content'))) {
             scrollableContainer = target;
             break;
         }
@@ -171,7 +171,7 @@ function handleTouchStart(event) {
     scrollableContainerForTouch = null;
 
     while (target && target !== document.body) {
-        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects'))) {
+        if (target.classList && (target.classList.contains('introduction-content') || target.classList.contains('education-section') || target.classList.contains('job-history') || target.classList.contains('stack') || target.classList.contains('projects') || target.classList.contains('experience-content'))) {
             scrollableContainerForTouch = target;
             break;
         }
@@ -275,5 +275,6 @@ loadObject('education', 'education/index.html');
 loadObject('job-history', 'history/index.html');
 loadObject('stack', 'stack/index.html');
 loadObject('projects', 'projects/index.html');
+loadObject('experience', 'experience/index.html');
 
     
