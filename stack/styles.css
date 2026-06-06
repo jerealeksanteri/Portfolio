@@ -114,6 +114,7 @@
 .logos-slide img {
     width: 6vh;
     height: 6vh;
+    object-fit: contain;
     background-color: transparent;
     transition: all 0.4s ease;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
@@ -212,6 +213,7 @@
     .logos-slide img {
         width: 8vh;
         height: 8vh;
+        object-fit: contain;
     }
 
     .stack-column::before,
