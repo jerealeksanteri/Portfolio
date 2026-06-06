@@ -68,18 +68,6 @@
     padding: 10px 0;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, #0f0, #0a0);
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px #0f0;
-}
-
 .job-card {
     position: relative;
     margin: 8px 0;
@@ -275,12 +263,8 @@
         padding: 0 10px 10px 10px;
     }
 
-    .timeline::before {
-        left: 15px;
-    }
-
     .job-card {
-        margin: 8px 0 8px 30px;
+        margin: 8px 0;
         padding: 10px;
     }
 

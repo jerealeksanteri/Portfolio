@@ -145,7 +145,11 @@ const sectionObserver = new IntersectionObserver(
 sections.forEach((s) => sectionObserver.observe(s));
 
 function loadObject(id, path) {
-    fetch(path)
+    // On localhost, bust caches so CSS/JS edits reload reliably during dev.
+    const isLocal = ['localhost', '127.0.0.1', '::1'].includes(location.hostname);
+    const bust = isLocal ? `?t=${Date.now()}` : '';
+
+    fetch(path + bust)
         .then(response => response.text())
         .then((html) => {
             document.getElementById(id).innerHTML = html;
@@ -153,13 +157,13 @@ function loadObject(id, path) {
             // Dynamically load the styles
             const style = document.createElement('link');
             style.rel = 'stylesheet';
-            style.href = `${path.replace("index.html", "styles.css")}`;
+            style.href = `${path.replace("index.html", "styles.css")}${bust}`;
             style.onload = () => console.log(`Styles loaded for ${path}`);
             document.head.appendChild(style);
 
             // Dynamically load the scripts
             const script = document.createElement('script');
-            script.src = `${path.replace("index.html", "scripts.js")}`;
+            script.src = `${path.replace("index.html", "scripts.js")}${bust}`;
             script.onload = () => console.log(`Script loaded for ${path}`);
             document.body.appendChild(script);
         })
