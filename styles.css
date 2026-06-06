@@ -4,10 +4,22 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     overflow: hidden;
+}
+
+.content {
     height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 section {
@@ -17,6 +29,7 @@ section {
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 #terminal {
