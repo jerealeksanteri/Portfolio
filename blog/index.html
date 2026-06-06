@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog &middot; Jere Niemi</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="blog-header">
+        <a href="../index.html" class="back-link">&lt; .home</a>
+        <h1 class="blog-title">~/blog</h1>
+        <span class="blog-sub">notes &amp; writeups</span>
+    </header>
+
+    <main class="blog-main">
+        <ul id="post-list" class="post-list" aria-live="polite">
+            <li class="post-loading">Loading posts...</li>
+        </ul>
+        <p id="post-empty" class="post-empty" hidden>No posts yet. Check back soon.</p>
+        <p id="post-error" class="post-error" hidden>Failed to load posts.</p>
+    </main>
+
+    <footer class="blog-footer">
+        <p>&copy; 2026 Jere Niemi.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

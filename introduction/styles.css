@@ -5,6 +5,7 @@
     padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
+    overscroll-behavior: contain;
 }
 
 /* Custom scrollbar */
