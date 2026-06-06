@@ -9,7 +9,12 @@
 </head>
 <body>
     <div>
-        <div class="nav">
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="nav" id="primary-nav">
             <div class="nav-item">
                 <a>.me</a>
             </div>
@@ -35,7 +40,9 @@
                 <a>.contact</a>
             </div>
 
-        </div>
+            <a class="nav-blog" href="blog/index.html" aria-label="Blog">~/blog</a>
+
+        </nav>
         
         <div class="content">
             <section id="terminal">
