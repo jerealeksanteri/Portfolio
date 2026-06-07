@@ -1,0 +1,27 @@
+[
+    {
+        "id": "msc",
+        "level": "M.Sc.",
+        "title": "Master's Thesis (Topic TBA)",
+        "school": "Tampere University",
+        "year": "2026 - 2028",
+        "supervisor": "TBA",
+        "status": "planning",
+        "progress": 0,
+        "excerpt": "Topic and scope to be defined as the M.Sc. programme begins.",
+        "abstract": "Topic and scope to be defined as the M.Sc. programme begins in 2026.",
+        "pdf": null
+    },
+    {
+        "id": "bsc",
+        "level": "B.Sc.",
+        "title": "Utilizing Common IoT Positioning Technologies in Industrial Environments",
+        "school": "Tampere University",
+        "year": "2022 - 2026",
+        "supervisor": "TBA",
+        "status": "final",
+        "excerpt": "Electronics & Embedded Systems \u2014 working draft in progress.",
+        "abstract": "Working draft. Final version to be published in the summer of 2026.",
+        "pdf": "pdfs/bsc.pdf"
+    }
+]

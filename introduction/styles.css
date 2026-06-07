@@ -2,6 +2,8 @@
     width: 100%;
     max-width: 800px;
     max-height: 85vh;
+    max-height: 85svh;
+    max-height: 85dvh;
     padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -66,17 +68,18 @@
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
     .introduction-content {
-        padding: 15px;
-        max-height: 80vh;
+        padding: 12px 15px;
+        max-height: 100dvh;
     }
 
     .introduction-content h2 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
+        font-size: 1.4rem;
+        margin-bottom: 12px;
     }
 
     .quote-box {
-        padding: 20px;
-        font-size: 0.9rem;
+        padding: 16px;
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 }

@@ -5,6 +5,8 @@
     display: flex;
     flex-direction: column;
     max-height: 80vh;
+    max-height: 80svh;
+    max-height: 80dvh;
 }
 
 .projects-wrapper h2 {
@@ -202,6 +204,8 @@
 @media screen and (max-width: 768px) {
     .projects-wrapper {
         max-height: 80vh;
+        max-height: 80svh;
+        max-height: 80dvh;
     }
 
     .projects-wrapper h2 {

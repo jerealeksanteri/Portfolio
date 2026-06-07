@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theses &middot; Jere Niemi</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="theses-header">
+        <a href="../index.html" class="back-link">&lt; .home</a>
+        <h1 class="theses-title">~/theses</h1>
+        <span class="theses-sub">academic work &amp; research progress</span>
+    </header>
+
+    <main class="theses-main">
+        <ul id="theses-list" class="theses-list" aria-live="polite">
+            <li class="loading">Loading theses...</li>
+        </ul>
+        <p id="theses-empty" class="empty-state" hidden>No theses listed yet.</p>
+        <p id="theses-error" class="error-state" hidden>Failed to load theses.</p>
+    </main>
+
+    <footer class="theses-footer">
+        <p>&copy; 2026 Jere Niemi.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

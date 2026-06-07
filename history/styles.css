@@ -5,6 +5,8 @@
     display: flex;
     flex-direction: column;
     max-height: 80vh;
+    max-height: 80svh;
+    max-height: 80dvh;
 }
 
 .job-history-wrapper h2 {
@@ -250,6 +252,8 @@
 @media screen and (max-width: 768px) {
     .job-history-wrapper {
         max-height: 85vh;
+        max-height: 85svh;
+        max-height: 85dvh;
         align-items: center;
     }
 

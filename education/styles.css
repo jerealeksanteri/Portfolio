@@ -40,6 +40,36 @@
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
 }
 
+/* Clickable items linking to the thesis viewer */
+.edu-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.edu-link:hover {
+    color: inherit;
+}
+
+.edu-cta {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #0a0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.edu-link:hover .edu-cta {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
 .edu-header {
     display: flex;
     justify-content: space-between;

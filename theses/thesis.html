@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis &middot; Jere Niemi</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="theses-header">
+        <a href="./index.html" class="back-link">&lt; .theses</a>
+        <div class="thesis-heading">
+            <span id="thesis-level" class="thesis-level"></span>
+            <h1 id="thesis-title" class="thesis-title">Loading...</h1>
+        </div>
+        <div class="thesis-meta">
+            <span id="thesis-school"></span>
+            <span id="thesis-year"></span>
+            <span id="thesis-supervisor"></span>
+        </div>
+
+        <div class="status-row">
+            <span id="thesis-status" class="status-badge">--</span>
+            <div class="progress-track" aria-hidden="true">
+                <div id="thesis-progress" class="progress-fill" style="width: 0%"></div>
+            </div>
+            <span id="thesis-progress-label" class="progress-label">0%</span>
+        </div>
+    </header>
+
+    <main class="theses-main">
+        <section id="abstract-section" class="abstract" hidden>
+            <h2>Abstract</h2>
+            <p id="thesis-abstract"></p>
+        </section>
+
+        <section class="viewer-section">
+            <div class="viewer-header">
+                <h2>Document</h2>
+                <a id="thesis-download" class="download-link" href="#" download hidden>download .pdf</a>
+            </div>
+            <div id="viewer-container" class="viewer-container">
+                <p class="viewer-placeholder">Loading...</p>
+            </div>
+        </section>
+
+        <p id="thesis-error" class="error-state" hidden>Thesis not found.</p>
+    </main>
+
+    <footer class="theses-footer">
+        <a href="./index.html" class="back-link">&lt; back to all theses</a>
+    </footer>
+
+    <script src="thesis.js"></script>
+</body>
+</html>
