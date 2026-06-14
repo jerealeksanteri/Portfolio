@@ -139,6 +139,11 @@
     color: white;
 }
 
+.project-tag.server {
+    background: #d30837;
+    color: white;
+}
+
 .project-card h3 {
     font-size: 1.1rem;
     color: #333;
