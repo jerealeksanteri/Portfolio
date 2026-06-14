@@ -8,6 +8,7 @@
         "supervisor": "TBA",
         "status": "planning",
         "progress": 0,
+        "grade": "N/A",
         "excerpt": "Topic and scope to be defined as the M.Sc. programme begins.",
         "abstract": "Topic and scope to be defined as the M.Sc. programme begins in 2026.",
         "pdf": null
@@ -19,7 +20,8 @@
         "school": "Tampere University",
         "year": "2022 - 2026",
         "supervisor": "Katja Laine",
-        "status": "final",
+        "status": "graded",
+        "grade": "4",
         "excerpt": "Electronics & Embedded Systems \u2014 working draft in progress.",
         "abstract": "Sisäpaikannusteknologiat ovat nousseet keskeiseen asemaan teollisuuden digitalisaation myötä, sillä tarkka tieto tuotteiden, työkalujen ja työntekijöiden sijainnista mahdollistaa toiminnan tehostamisen, turvallisuuden parantamisen ja prosessien automatisoinnin. Teollisuusympäristöt asettavat kuitenkin paikannusjärjestelmille omat haasteensa, kuten metallirakenteet, monitie-eteneminen ja näköyhteyden estyminen, mikä vaikeuttaa teknologian valintaa.\n\nTämän työn tavoitteena on selvittää, millaisia paikannusteknologioita teollisissa sisäympäristöissä käytetään, millaisia tarkkuuksia niillä saavutetaan ja mitkä teknologiat soveltuvat näihin ympäristöihin parhaiten. Tarkasteltavaksi rajattiin neljä yleisesti käytettyä radiotaajuista teknologiaa: Bluetooth Low Energy (BLE), Ultra Wideband (UWB), Radio Frequency Identification (RFID) ja LoRa (Long Range).\n\nTyö koostuu kahdesta osasta. Ensimmäisessä osassa tehdään kirjallisuuskatsaus, jossa tarkasteltiin edellä mainittujen teknologioiden toimintaperiaatteita, tyypillisiä tarkkuuksia ja teollisen sovellettavuuden vahvuuksia ja heikkouksia. Toisessa osassa toteutetaan UWB-pohjainen prototyyppi kolmesta DWM3001CDK-ankkurista ja iPhone 16 Pro Max -tunnisteesta, joka hyödyntää Apple Nearby Interaction -rajapintaa. Prototyypin paikannustarkkuutta arvioidaan staattisilla mittauksilla neljässä konfiguraatiossa, jossa näköyhteyttä ja trilateraatiomenetelmää vaihdellaan.\n\nKirjallisuuskatsauksen perusteella UWB tarjoaa parhaan tarkkuuden (tyypillisesti 10-30 cm), BLE saavuttaa AoA-menetelmillä alle metrin, RFID soveltuu vyöhykepaikannukseen ja LoRa lähinnä laajojen alueiden kattamiseen. Toteutettu UWB-prototyyppi saavutti suotuisassa geometriassa 7-10 cm:n RMS-tarkkuuden, mikä vastaa kirjallisuudessa raportoitua älypuhelinpohjaisen UWB-paikannuksen tasoa. Painotetun ja painottamattoman pienimmän neliösumman ratkaisun ero jäi tasapainoisessa geometriassa mittauskohinasta erottumattomaksi, ja näköyhteyden estyminen näkyi selvänä, ankkurikohtaisesti paikannettavana virheenä. Mittausten suurimmaksi yksittäiseksi virhelähteeksi osoittautui iPhonen UWB-antennin suuntariippuvuus.\n\nTulokset tukevat näkemystä, jonka mukaan UWB on tarkkuutta vaativiin teollisuussovelluksiin tarkasteltujen teknologioiden joukosta soveltuvin, kun taas muut teknologiat sopivat eri tarkkuus- ja kustannusvaatimusten sovelluksiin. Älypuhelinta tunnisteena käyttäessä laitteen orientaation ja antennikalibroinnin merkitys on käytännön suunnittelussa olennainen.",
         "pdf": "pdfs/bsc.pdf"

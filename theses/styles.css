@@ -76,6 +76,7 @@ a:hover {
     font-size: 0.9rem;
     margin-top: 8px;
     display: flex;
+    align-items: baseline;
     flex-wrap: wrap;
     gap: 14px;
 }
@@ -83,6 +84,22 @@ a:hover {
 .thesis-meta span:empty {
     display: none;
 }
+
+.grade-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    color: #888;
+}
+
+.grade-badge[data-grade="5"] { color: #0f0; border-color: #0f0; }
+.grade-badge[data-grade="4"] { color: #4ea1ff; border-color: #4ea1ff; }
+.grade-badge[data-grade="3"] { color: #f4c430; border-color: #f4c430; }
+.grade-badge[data-grade="2"] { color: #ff944d; border-color: #ff944d; }
+.grade-badge[data-grade="1"] { color: #ff6b6b; border-color: #ff6b6b; }
 
 /* Status + progress */
 .status-row {
@@ -109,7 +126,7 @@ a:hover {
 .status-badge[data-status="drafting"]   { color: #f4c430; }
 .status-badge[data-status="review"]     { color: #ff944d; }
 .status-badge[data-status="final"]      { color: #0f0; animation: pulse 2s ease-in-out infinite; }
-.status-badge[data-status="defended"]   { color: #0f0; background-color: rgba(0, 255, 0, 0.08); }
+.status-badge[data-status="graded"]     { color: #0f0; background-color: rgba(0, 255, 0, 0.08); }
 
 @keyframes pulse {
     0%, 100% { opacity: 1; }

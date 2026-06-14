@@ -5,7 +5,7 @@ const STATUS_LABELS = {
     drafting: 'Drafting',
     review: 'In Review',
     final: 'Finalizing',
-    defended: 'Defended'
+    graded: 'Graded'
 };
 
 const STATUS_DEFAULT_PROGRESS = {
@@ -14,7 +14,7 @@ const STATUS_DEFAULT_PROGRESS = {
     drafting: 50,
     review: 75,
     final: 95,
-    defended: 100
+    graded: 100
 };
 
 function escapeHtml(str) {
@@ -77,6 +77,7 @@ function progressFor(thesis) {
             const school = escapeHtml(t.school || '');
             const year = escapeHtml(t.year || '');
             const excerpt = escapeHtml(t.excerpt || t.abstract || '');
+            const grade = escapeHtml(t.grade || 'N/A');
             const sKey = statusKey(t.status);
             const sLabel = escapeHtml(statusLabel(t.status));
             const progress = progressFor(t);
@@ -91,6 +92,7 @@ function progressFor(thesis) {
                         <div class="thesis-meta">
                             ${school ? `<span>${school}</span>` : ''}
                             ${year ? `<span>${year}</span>` : ''}
+                            <span class="grade-badge" data-grade="${grade}">Grade: ${grade}</span>
                         </div>
                         ${excerpt ? `<p class="excerpt">${excerpt}</p>` : ''}
                         <div class="status-row">

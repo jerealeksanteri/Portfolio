@@ -4,7 +4,7 @@ const STATUS_LABELS = {
     drafting: 'Drafting',
     review: 'In Review',
     final: 'Finalizing',
-    defended: 'Defended'
+    graded: 'Graded'
 };
 
 const STATUS_DEFAULT_PROGRESS = {
@@ -13,7 +13,7 @@ const STATUS_DEFAULT_PROGRESS = {
     drafting: 50,
     review: 75,
     final: 95,
-    defended: 100
+    graded: 100
 };
 
 function statusKey(status) {
@@ -76,6 +76,11 @@ function showError(msg) {
         setText('thesis-school', meta.school || '');
         setText('thesis-year', meta.year || '');
         setText('thesis-supervisor', meta.supervisor ? `Supervisor: ${meta.supervisor}` : '');
+
+        const grade = meta.grade || 'N/A';
+        const gradeEl = document.getElementById('thesis-grade');
+        gradeEl.textContent = `Grade: ${grade}`;
+        gradeEl.dataset.grade = grade;
 
         const sKey = statusKey(meta.status);
         const badge = document.getElementById('thesis-status');
